@@ -42,8 +42,8 @@ VERSION = 1
 
 # Allowed tokens — adjust to your project needs
 ALLOWED_TOKENS = {
-    "UP","DOWN","LEFT","RIGHT","ENTER","OK","ESC","BACK","TAB","SPACE",
-    "WAIT","WAIT1","WAIT2","WAIT3","WAIT5","WAIT10"
+    "UP","DOWN","LEFT","RIGHT","OK","EPG","BACK",
+    "WAIT","WAIT1","WAIT2","WAIT3","WAIT5","TV"
 }
 
 # ===== Validation & canonicalization =====
@@ -112,6 +112,7 @@ def canonicalize_sequence(seq_str: str) -> str:
                 f"Allowed: {', '.join(sorted(ALLOWED_TOKENS))}"
             )
     return ",".join(tokens)
+  
 def confirm(prompt: str, default_no: bool = True) -> bool:
     suffix = " [y/N]: " if default_no else " [Y/n]: "
     ans = input(prompt + suffix).strip().lower()
@@ -435,3 +436,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
